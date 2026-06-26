@@ -1,7 +1,6 @@
 import { Stack, useRouter } from 'expo-router';
 import { useEffect } from 'react';
-import '../global.css';
-import { ecouterNotifications, enregistrerNotifications } from '../src/services/notifications';
+import { ecouterNotifications, enregistrerNotifications } from './services/notifications';
 
 export default function RootLayout() {
   const router = useRouter();

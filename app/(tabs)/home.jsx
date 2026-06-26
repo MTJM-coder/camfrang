@@ -23,8 +23,12 @@ export default function Home() {
     });
 
     api.get('/user/profile')
-      .then((res) => setCitoyen(res.data.citoyen))
-      .catch(() => {})
+      .then((res) => {
+        const userData = res.data.user;
+        setUser(userData);
+        setCitoyen(userData.citoyen);
+      })
+      .catch(() => { })
       .finally(() => setLoading(false));
   }, []);
 
@@ -33,8 +37,8 @@ export default function Home() {
       const res = await api.put('/citoyen/disponibilite', {
         disponible: !citoyen?.disponible,
       });
-      setCitoyen(res.data.citoyen);
-    } catch (e) {}
+      setCitoyen(res.data.user.citoyen);
+    } catch (e) { }
   };
 
   return (

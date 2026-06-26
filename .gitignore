@@ -17,6 +17,8 @@ expo-env.d.ts
 *.p12
 *.key
 *.mobileprovision
+bloodlink-c78cd-8ee0d406cd78*.json
+credentials.json
 
 # Metro
 .metro-health-check*
